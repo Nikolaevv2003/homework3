@@ -1,23 +1,22 @@
-﻿#include <iostream>
-#include <cmath>
-
 #include <iostream>
-#include <cstdlib>
 using namespace std;
 
 int main()
 {
-    int N;
-    cout << "N="; cin >> N;
-    if (N > 0) {
-        for (int i = N; i <= N + 10; i++)
-            cout << i << " ";
-        cout << "\n";
+    int m, n;
+    char alphabet[30];
+    m = 0;
 
-        system("pause");
-        return 0;
+    cout << "Enter the string: ";
+    cin >> alphabet;
+
+    for (m; m < strlen(alphabet) - 1; m++) {
+        for (n = m; n < strlen(alphabet) - 1; n++) {
+            if (alphabet[m] > alphabet[n + 1])
+            {
+                swap(alphabet[m], alphabet[n + 1]);
+            }
+        }
     }
-    else {
-        cout << "error" << endl;
-    }
+    cout << alphabet;
 }
