@@ -1,19 +1,24 @@
-﻿#include <iostream>
+#include <iostream>
+#include <cmath>
+#include <string>
 #include <fstream>
-#include <iomanip>
-#include <stdlib.h>
 using namespace std;
+
 int main()
 {
-    setlocale(LC_ALL, "RUS");
+    string path = "file.txt";
+    ofstream fout;
 
-    ifstream F;
-    F.open("file1.txt");
-    if (F)
-        cout << F.rdbuf();
-    else
-        cout << "error" << endl;
+    fout.open(path);
 
-    cin.get();
-    return 0;
+
+    if (!fout.is_open()) {
+        cout << "Error";
+    }
+    
+    else {
+        fout << "Text";
+    }
+
+    fout.close();
 }
